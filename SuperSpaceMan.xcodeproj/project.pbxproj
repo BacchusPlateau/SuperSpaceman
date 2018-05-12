@@ -8,26 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BAF7525A20A7301A004F0D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7525920A7301A004F0D6B /* AppDelegate.swift */; };
-		BAF7525C20A7301A004F0D6B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF7525B20A7301A004F0D6B /* GameScene.sks */; };
-		BAF7525E20A7301A004F0D6B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BAF7525D20A7301A004F0D6B /* Actions.sks */; };
 		BAF7526020A7301A004F0D6B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7525F20A7301A004F0D6B /* GameScene.swift */; };
 		BAF7526220A7301A004F0D6B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7526120A7301A004F0D6B /* GameViewController.swift */; };
 		BAF7526520A7301A004F0D6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF7526320A7301A004F0D6B /* Main.storyboard */; };
 		BAF7526720A7301C004F0D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF7526620A7301C004F0D6B /* Assets.xcassets */; };
 		BAF7526A20A7301C004F0D6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF7526820A7301C004F0D6B /* LaunchScreen.storyboard */; };
+		BAF7527220A73695004F0D6B /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BAF7527120A73695004F0D6B /* sprites.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BAF7525620A7301A004F0D6B /* SuperSpaceMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSpaceMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF7525920A7301A004F0D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAF7525B20A7301A004F0D6B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		BAF7525D20A7301A004F0D6B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		BAF7525F20A7301A004F0D6B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BAF7526120A7301A004F0D6B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BAF7526420A7301A004F0D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAF7526620A7301C004F0D6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAF7526920A7301C004F0D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF7526B20A7301C004F0D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF7527120A73695004F0D6B /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +59,11 @@
 			isa = PBXGroup;
 			children = (
 				BAF7525920A7301A004F0D6B /* AppDelegate.swift */,
-				BAF7525B20A7301A004F0D6B /* GameScene.sks */,
-				BAF7525D20A7301A004F0D6B /* Actions.sks */,
 				BAF7525F20A7301A004F0D6B /* GameScene.swift */,
 				BAF7526120A7301A004F0D6B /* GameViewController.swift */,
 				BAF7526320A7301A004F0D6B /* Main.storyboard */,
 				BAF7526620A7301C004F0D6B /* Assets.xcassets */,
+				BAF7527120A73695004F0D6B /* sprites.atlas */,
 				BAF7526820A7301C004F0D6B /* LaunchScreen.storyboard */,
 				BAF7526B20A7301C004F0D6B /* Info.plist */,
 			);
@@ -132,10 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF7526520A7301A004F0D6B /* Main.storyboard in Resources */,
-				BAF7525C20A7301A004F0D6B /* GameScene.sks in Resources */,
 				BAF7526720A7301C004F0D6B /* Assets.xcassets in Resources */,
+				BAF7527220A73695004F0D6B /* sprites.atlas in Resources */,
 				BAF7526A20A7301C004F0D6B /* LaunchScreen.storyboard in Resources */,
-				BAF7525E20A7301A004F0D6B /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
