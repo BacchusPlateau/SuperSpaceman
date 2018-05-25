@@ -17,7 +17,9 @@ class GameScene : SKScene {
     let foregroundNode = SKSpriteNode()
     let playerNode = SKSpriteNode(imageNamed: "Player")
 
-    var impulseCount = 4
+    var engineExhaust: SKEmitterNode?
+    
+    var impulseCount = 40
     let coreMotionManager = CMMotionManager()
     
     let CollisionCategoryPlayer : UInt32 = 0x1 << 1
@@ -66,6 +68,12 @@ class GameScene : SKScene {
         
         addBlackHolesToForeground()
         addOrbsToForeground()
+        
+        let engineExhaustPath = Bundle.main.path(forResource: "EngineExhaust", ofType: "sks")
+        engineExhaust = NSKeyedUnarchiver.unarchiveObject(withFile: engineExhaustPath!) as? SKEmitterNode
+        engineExhaust?.position = CGPoint(x: 0.0, y: -(playerNode.size.height / 2))
+        playerNode.addChild(engineExhaust!)
+        engineExhaust?.isHidden = true
         
     }
     
@@ -141,6 +149,15 @@ class GameScene : SKScene {
         }
     }
     
+    @objc func hideEngineExhaust(_ timer:Timer!) {
+        
+        if (!(engineExhaust?.isHidden)!) {
+            
+            engineExhaust?.isHidden = true
+            
+        }
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -157,6 +174,13 @@ class GameScene : SKScene {
             
             playerNode.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 40.0))
             impulseCount -= 1
+            engineExhaust?.isHidden = false
+            
+            Timer.scheduledTimer(timeInterval: 0.5,
+                                 target: self,
+                                 selector: #selector(GameScene.hideEngineExhaust(_:)),
+                                 userInfo: nil,
+                                 repeats: false)
             
         }
     }
@@ -220,6 +244,8 @@ extension GameScene : SKPhysicsContactDelegate {
             
             playerNode.physicsBody?.contactTestBitMask = 0
             impulseCount = 0
+            let colorizeAction = SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 1)
+            playerNode.run(colorizeAction)
             
         }
         
