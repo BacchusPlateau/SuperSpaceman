@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA9B5C1720B8D620008315BE /* EngineExhaust.sks in Resources */ = {isa = PBXBuildFile; fileRef = BA9B5C1620B8D620008315BE /* EngineExhaust.sks */; };
+		BA9B5C1920B8F7D0008315BE /* orb_pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA9B5C1820B8F7D0008315BE /* orb_pop.wav */; };
 		BAF7525A20A7301A004F0D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7525920A7301A004F0D6B /* AppDelegate.swift */; };
 		BAF7526020A7301A004F0D6B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7525F20A7301A004F0D6B /* GameScene.swift */; };
 		BAF7526220A7301A004F0D6B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7526120A7301A004F0D6B /* GameViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		BA9B5C1620B8D620008315BE /* EngineExhaust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EngineExhaust.sks; sourceTree = "<group>"; };
+		BA9B5C1820B8F7D0008315BE /* orb_pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = orb_pop.wav; sourceTree = "<group>"; };
 		BAF7525620A7301A004F0D6B /* SuperSpaceMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSpaceMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF7525920A7301A004F0D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF7525F20A7301A004F0D6B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				BAF7527120A73695004F0D6B /* sprites.atlas */,
 				BAF7526820A7301C004F0D6B /* LaunchScreen.storyboard */,
 				BAF7526B20A7301C004F0D6B /* Info.plist */,
+				BA9B5C1820B8F7D0008315BE /* orb_pop.wav */,
 			);
 			path = SuperSpaceMan;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 				BAF7526720A7301C004F0D6B /* Assets.xcassets in Resources */,
 				BA9B5C1720B8D620008315BE /* EngineExhaust.sks in Resources */,
 				BAF7527220A73695004F0D6B /* sprites.atlas in Resources */,
+				BA9B5C1920B8F7D0008315BE /* orb_pop.wav in Resources */,
 				BAF7526A20A7301C004F0D6B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

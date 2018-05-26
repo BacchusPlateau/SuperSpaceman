@@ -20,11 +20,16 @@ class GameScene : SKScene {
     var engineExhaust: SKEmitterNode?
     
     var impulseCount = 40
+    var score = 0
+    let scoreTextNode = SKLabelNode(fontNamed: "Copperplate")
+    let impulseTextNode = SKLabelNode(fontNamed: "Copperplate")
     let coreMotionManager = CMMotionManager()
     
     let CollisionCategoryPlayer : UInt32 = 0x1 << 1
     let CollisionCategoryPowerUpOrbs : UInt32 = 0x1 << 2
     let CollisionCategoryBlackHoles : UInt32 = 0x1 << 3
+    
+    let orbPopAction = SKAction.playSoundFileNamed("orb_pop.wav", waitForCompletion: false)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -74,6 +79,20 @@ class GameScene : SKScene {
         engineExhaust?.position = CGPoint(x: 0.0, y: -(playerNode.size.height / 2))
         playerNode.addChild(engineExhaust!)
         engineExhaust?.isHidden = true
+        
+        scoreTextNode.text = "SCORE : \(score)"
+        scoreTextNode.fontSize = 20
+        scoreTextNode.fontColor = SKColor.white
+        scoreTextNode.position = CGPoint(x: size.width - 10, y: size.height - 20)
+        scoreTextNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        addChild(scoreTextNode)
+        
+        impulseTextNode.text = "IMPULSES : \(impulseCount)"
+        impulseTextNode.fontSize = 20
+        impulseTextNode.fontColor = SKColor.white
+        impulseTextNode.position = CGPoint(x: 10, y: size.height - 20)
+        impulseTextNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        addChild(impulseTextNode)
         
     }
     
@@ -174,6 +193,7 @@ class GameScene : SKScene {
             
             playerNode.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 40.0))
             impulseCount -= 1
+            impulseTextNode.text = "IMPULSES : \(impulseCount)"
             engineExhaust?.isHidden = false
             
             Timer.scheduledTimer(timeInterval: 0.5,
@@ -236,14 +256,21 @@ extension GameScene : SKPhysicsContactDelegate {
         
         if (nodeB?.name == "POWER_UP_ORB") {
             
+            run(orbPopAction)
+            
             impulseCount += 1
+            score += 1
+            
+            scoreTextNode.text = "SCORE : \(score)"
+            impulseTextNode.text = "IMPULSES : \(impulseCount)"
+            
             nodeB?.removeFromParent()
-            print ("impulse count: \(impulseCount)")
             
         } else if (nodeB?.name == "BLACK_HOLE") {
             
             playerNode.physicsBody?.contactTestBitMask = 0
             impulseCount = 0
+            impulseTextNode.text = "IMPULSES : \(impulseCount)"
             let colorizeAction = SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 1)
             playerNode.run(colorizeAction)
             
