@@ -34,7 +34,7 @@ class MenuScene : SKScene {
         addChild(gameResultTextNode)
         
         let scoreTextNode = SKLabelNode(fontNamed: "Copperplate")
-        scoreTextNode.text = "SCORE \(score)"
+        scoreTextNode.text = "SCORE: \(score)"
         scoreTextNode.fontSize = 20
         scoreTextNode.fontColor = SKColor.white
         scoreTextNode.position = CGPoint(x: size.width / 2.0, y: gameResultTextNode.position.y - 40.0)
